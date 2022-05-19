@@ -53,7 +53,8 @@ page {
     margin-bottom: 24rpx;
     box-sizing: border-box;
     position: relative;
-    background: #fff;
+    /* background: #fff; */
+    background:#4d4545;
     flex-direction: column;
 }
 
@@ -203,6 +204,7 @@ page {
     padding: 30rpx 24rpx;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #eee;
 }
 
 .icon-wrap {

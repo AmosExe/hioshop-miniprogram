@@ -1,6 +1,6 @@
 <view class="container">
     <view class="userinfo">
-        <view class='head-wrap' wx:if="{{hasUserInfo == 0}}" bindtap='goAuth'>
+        <view class='head-wrap' wx:if="{{hasUserInfo == 0}}" bindtap='goAuth' style="width: 706rpx; height: 156rpx; display: flex; box-sizing: border-box">
             <view class="no-login-avatar">
                 <view class='no-avatar'>
                     <image class='avatar' src="/images/icon/default_avatar_big.png"></image>
@@ -16,6 +16,7 @@
                 <view class='r'>
                     <view class='t'>
                         <view class='name'>{{userInfo.nickname}}</view>
+                        <view>jifen</view>
                     </view>
                 </view>
             </view>
@@ -23,8 +24,43 @@
                 <view class="arrow"></view>
             </view>
         </view>
+        <view class='btn-container' style="width: 754rpx; height: 158rpx; display: flex; box-sizing: border-box">
+            <view class='icon-wrap' data-index='1' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/icon/icon-pay-r.png'>
+                    </image>
+                    <view wx:if="{{status.toPay > 0 }}" class='red-point'>{{status.toPay}}</view>
+                </view>
+                <text class='order-txt'>每日签到</text>
+            </view>
+            <view class='icon-wrap' data-index='2' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/icon/icon-delivery-r.png'>
+                    </image>
+                    <view wx:if="{{status.toDelivery > 0 }}" class='red-point'>{{status.toDelivery}}</view>
+                </view>
+                <text class='order-txt'>积分赠予</text>
+            </view>
+            <view class='icon-wrap' data-index='3' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/icon/icon-onroad-r.png'>
+                    </image>
+                    <view wx:if="{{status.toReceive > 0 }}" class='red-point'>{{status.toReceive}}</view>
+                </view>
+                <text class='order-txt'>积分零元购</text>
+            </view>
+            <view class='icon-wrap' data-index='4' bindtap='toOrderListTap'>
+                <view class='order-icon-wrap'>
+                    <image class='order-icon' src='/images/icon/icon-onroad-r.png'>
+                    </image>
+                    <view wx:if="{{status.toReceive > 0 }}" class='red-point'>{{status.toReceive}}</view>
+                </view>
+                <text class='order-txt'>积分商城</text>
+            </view>
+        </view>
     </view>
     <!-- <ad unit-id="adunit-89ae0a0b6860dc9f" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad> -->
+    
     <view class="order-container">
         <view class='header' data-index='0' bindtap='toOrderListTap'>
             <view class='top-title'>
